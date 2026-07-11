@@ -1,6 +1,6 @@
-# Proyecto Final: Sistema de Gestión Logística (Microservicios)
+# Proyecto Final: Sistema de Gestión Logística 
 
-Este proyecto es la solución desarrollada para el Examen Final Transversal (EFT). Consiste en una arquitectura de microservicios para gestionar la logística de una empresa, cubriendo desde el catálogo de productos hasta el despacho y auditoría.
+Este proyecto Consiste en una arquitectura de microservicios para gestionar la logística de una empresa, cubriendo desde el catálogo de productos hasta el despacho y auditoría.
 
 # Integrantes del Equipo
 * [Fabio Lobos]
