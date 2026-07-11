@@ -20,7 +20,6 @@ public class DataInitializer {
                 for (int i = 0; i < 10; i++) {
                     Proveedor proveedor = new Proveedor();
                     proveedor.setNombre(faker.company().name());
-                    proveedor.setContacto(faker.name().fullName());
                     proveedor.setEmail(faker.internet().emailAddress());
                     proveedor.setTelefono(faker.phoneNumber().phoneNumber());
                     proveedor.setDireccion(faker.address().fullAddress());

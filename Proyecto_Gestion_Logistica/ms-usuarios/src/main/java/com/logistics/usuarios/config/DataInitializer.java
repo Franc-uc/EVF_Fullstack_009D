@@ -19,14 +19,13 @@ public class DataInitializer {
                 Faker faker = new Faker(new Locale("es"));
                 for (int i = 0; i < 15; i++) {
                     Usuario usuario = new Usuario();
-                    usuario.setUsername(faker.name().username());
-                    usuario.setEmail(faker.internet().emailAddress());
+                    usuario.setNombre(faker.name().username());
+                    usuario.setCorreo(faker.internet().emailAddress());
                     usuario.setNombre(faker.name().firstName());
-                    usuario.setApellido(faker.name().lastName());
-                    usuario.setPassword("password123");
+                    usuario.setContrasena("patata506");
                     usuarioRepository.save(usuario);
                 }
-                System.out.println("15 Usuarios generados con Faker exitosamente");
+                System.out.println("15 Usuarios generados exitosamente.");
             }
         };
     }

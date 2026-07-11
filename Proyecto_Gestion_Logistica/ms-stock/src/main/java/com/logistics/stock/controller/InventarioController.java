@@ -38,7 +38,7 @@ public class InventarioController {
         Inventario inventario = new Inventario();
         inventario.setProductoId(inventarioDTO.getProductoId());
         inventario.setCantidad(inventarioDTO.getCantidad());
-        inventario.setBodegaUbicacion(inventarioDTO.getBodegaUbicacion());
+        inventario.setUbicacion(inventarioDTO.getBodegaUbicacion());
         return ResponseEntity.status(HttpStatus.CREATED).body(inventarioService.save(inventario));
     }
 
@@ -47,7 +47,7 @@ public class InventarioController {
         Inventario existingInventario = inventarioService.findById(id);
         existingInventario.setProductoId(inventarioDTO.getProductoId());
         existingInventario.setCantidad(inventarioDTO.getCantidad());
-        existingInventario.setBodegaUbicacion(inventarioDTO.getBodegaUbicacion());
+        existingInventario.setUbicacion(inventarioDTO.getBodegaUbicacion());
         return ResponseEntity.ok(inventarioService.save(existingInventario));
     }
 

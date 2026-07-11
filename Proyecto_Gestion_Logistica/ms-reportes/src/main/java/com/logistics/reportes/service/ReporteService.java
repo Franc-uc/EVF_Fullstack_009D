@@ -45,7 +45,7 @@ public class ReporteService {
     }
 
     public Reporte findById(Long id) {
-        return reporteRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Reporte no encontrado con id: " + id));
+        return reporteRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Reporte no encontrado. ID: " + id));
     }
 
     public Reporte save(Reporte reporte) {

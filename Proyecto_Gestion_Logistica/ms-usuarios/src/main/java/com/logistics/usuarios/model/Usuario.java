@@ -12,19 +12,19 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "El nombre de usuario no puede estar vacío")
-    @Size(min = 3, max = 50, message = "El nombre de usuario debe tener entre 3 y 50 caracteres")
-    private String username;
+    @NotBlank(message = "El nombre no puede quedar vacío.")
+    @Size(min = 3, max = 50, message = "El nombre debe contener entre 3 y 50 caracteres.")
+    private String nombre;
 
-    @NotBlank(message = "La contraseña no puede estar vacía")
-    @Size(min = 6, message = "La contraseña debe tener al menos 6 caracteres")
-    private String password;
+    @NotBlank(message = "La contraseña no puede quedar vacía.")
+    @Size(min = 6, message = "La contraseña debe contener al menos 6 caracteres")
+    private String contrasena;
 
-    @NotBlank(message = "El correo electrónico no puede estar vacío")
-    @Email(message = "Debe ser un formato de correo electrónico válido")
-    private String email;
+    @NotBlank(message = "El correo electrónico no puede quedar vacío.")
+    @Email(message = "Ingresa un formato de correo válido.")
+    private String correo;
 
-    private String rol; // Por ejemplo: ADMIN, CLIENTE, EMPLEADO
+    private String rol;
 
     public Long getId() {
         return id;
@@ -34,28 +34,28 @@ public class Usuario {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getPassword() {
-        return password;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCorreo(String email) {
+        this.correo = email;
     }
 
     public String getRol() {

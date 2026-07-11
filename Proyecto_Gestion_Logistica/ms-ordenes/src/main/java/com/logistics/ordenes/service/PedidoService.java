@@ -16,21 +16,14 @@ import java.util.List;
 @Service
 public class PedidoService {
 
-    private CatalogoClient catalogoClient;
+    private final CatalogoClient catalogoClient;
+    private final StockClient stockClient;
+    private final PedidoRepository pedidoRepository;
 
-    public PedidoService(CatalogoClient catalogoClient) {
+    // Constructor nativo de Java - No requiere ninguna librería externa en el pom.xml
+    public PedidoService(CatalogoClient catalogoClient, StockClient stockClient, PedidoRepository pedidoRepository) {
         this.catalogoClient = catalogoClient;
-    }
-
-    private StockClient stockClient;
-
-    public PedidoService(StockClient stockClient) {
         this.stockClient = stockClient;
-    }
-
-    private PedidoRepository pedidoRepository;
-
-    public PedidoService(PedidoRepository pedidoRepository) {
         this.pedidoRepository = pedidoRepository;
     }
 

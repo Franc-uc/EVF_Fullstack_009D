@@ -29,14 +29,10 @@ public class ProductoController {
     private static final Logger logger = LoggerFactory.getLogger(ProductoController.class);
 
     private CategoriaRepository categoriaRepository;
-
-    public ProductoController(CategoriaRepository categoriaRepository) {
-        this.categoriaRepository = categoriaRepository;
-    }
-
     private ProductoService productoService;
 
-    public ProductoController(ProductoService productoService) {
+    public ProductoController(CategoriaRepository categoriaRepository, ProductoService productoService) {
+        this.categoriaRepository = categoriaRepository;
         this.productoService = productoService;
     }
 

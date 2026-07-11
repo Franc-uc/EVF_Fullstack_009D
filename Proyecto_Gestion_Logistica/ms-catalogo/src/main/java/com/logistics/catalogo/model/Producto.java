@@ -11,12 +11,12 @@ public class Producto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "El nombre no puede estar vacío")
+    @NotBlank(message = "El nombre no puede quedar vacío.")
     private String nombre;
 
     private String descripcion;
 
-    @Positive(message = "El precio debe ser mayor a cero")
+    @Positive(message = "El precio debe ser mayor a cero.")
     private Double precio;
 
     @ManyToOne(fetch = FetchType.LAZY)

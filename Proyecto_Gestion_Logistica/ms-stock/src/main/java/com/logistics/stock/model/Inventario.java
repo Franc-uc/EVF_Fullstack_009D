@@ -11,13 +11,13 @@ public class Inventario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "El ID del producto no puede ser nulo")
-    private Long productoId; // Referencia lógica al MS Catálogo
+    @NotNull(message = "El ID del producto no puede quedar vacío")
+    private Long productoId;
 
-    @Min(value = 0, message = "La cantidad en stock no puede ser negativa")
+    @Min(value = 0, message = "No puede ser negativo el stock.")
     private Integer cantidad;
 
-    private String bodegaUbicacion;
+    private String Ubicacion;
 
     public Long getId() {
         return id;
@@ -43,11 +43,11 @@ public class Inventario {
         this.cantidad = cantidad;
     }
 
-    public String getBodegaUbicacion() {
-        return bodegaUbicacion;
+    public String getUbicacion() {
+        return Ubicacion;
     }
 
-    public void setBodegaUbicacion(String bodegaUbicacion) {
-        this.bodegaUbicacion = bodegaUbicacion;
+    public void setUbicacion(String bodegaUbicacion) {
+        this.Ubicacion = bodegaUbicacion;
     }
 }

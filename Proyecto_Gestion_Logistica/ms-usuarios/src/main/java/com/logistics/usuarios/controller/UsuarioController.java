@@ -16,7 +16,7 @@ import java.util.List;
 @RequestMapping("/usuarios")
 public class UsuarioController {
 
-    private UsuarioService usuarioService;
+    private final UsuarioService usuarioService;
 
     public UsuarioController(UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
@@ -35,27 +35,32 @@ public class UsuarioController {
 
     @PostMapping
     public ResponseEntity<Usuario> createUsuario(@Valid @RequestBody UsuarioDTO usuarioDTO) {
-        if (usuarioService.existsByUsername(usuarioDTO.getUsername())) {
-            throw new RuntimeException("El nombre de usuario ya está en uso!");
+        if (usuarioService.existsByUsername(usuarioDTO.getNombre())) {
+            throw new RuntimeException("El nombre ya está en uso!");
         }
-        if (usuarioService.existsByEmail(usuarioDTO.getEmail())) {
-            throw new RuntimeException("El correo electrónico ya está en uso!");
+        if (usuarioService.existsByEmail(usuarioDTO.getCorreo())) {
+            throw new RuntimeException("El correo ya está en uso!");
         }
+
         Usuario usuario = new Usuario();
-        usuario.setUsername(usuarioDTO.getUsername());
-        usuario.setPassword(usuarioDTO.getPassword()); // En un caso real, se encriptaría
-        usuario.setEmail(usuarioDTO.getEmail());
+        usuario.setNombre(usuarioDTO.getNombre());
+        usuario.setContrasena(usuarioDTO.getContrasena());
+        usuario.setCorreo(usuarioDTO.getCorreo());
+
         usuario.setRol(usuarioDTO.getRol());
+
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.save(usuario));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Usuario> updateUsuario(@PathVariable Long id, @Valid @RequestBody UsuarioDTO usuarioDTO) {
         Usuario existingUsuario = usuarioService.findById(id);
-        existingUsuario.setUsername(usuarioDTO.getUsername());
-        existingUsuario.setEmail(usuarioDTO.getEmail());
+        existingUsuario.setNombre(usuarioDTO.getNombre());
+
+        existingUsuario.setCorreo(usuarioDTO.getCorreo());
+
         existingUsuario.setRol(usuarioDTO.getRol());
-        // No se actualiza la contraseña directamente aquí por seguridad, se haría en otro endpoint
+
         return ResponseEntity.ok(usuarioService.save(existingUsuario));
     }
 

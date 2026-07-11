@@ -22,12 +22,10 @@ public class DataInitializer {
                 
                 Categoria cat1 = new Categoria();
                 cat1.setNombre("Electrónica");
-                cat1.setDescripcion("Dispositivos electrónicos y gadgets");
                 categoriaRepository.save(cat1);
 
                 Categoria cat2 = new Categoria();
                 cat2.setNombre("Hogar");
-                cat2.setDescripcion("Artículos para el hogar");
                 categoriaRepository.save(cat2);
 
                 for (int i = 0; i < 10; i++) {
