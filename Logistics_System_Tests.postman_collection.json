@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "a1b2c3d4-e5f6-4g7h-8i9j-k0l1m2n3o4p5",
+		"name": "Logistics Management System - Microservices",
+		"description": "Colección de pruebas para el sistema de gestión logística mejorado. Incluye pruebas de Catálogo, Reportes (WebClient), Usuarios y más.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Infraestructura y Documentación",
+			"item": [
+				{
+					"name": "Swagger UI (Gateway)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/swagger-ui.html",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"swagger-ui.html"
+							]
+						},
+						"description": "Acceso a la documentación interactiva de todos los microservicios a través del Gateway."
+					},
+					"response": []
+				},
+				{
+					"name": "Eureka Dashboard",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8761",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8761"
+						},
+						"description": "Panel de control de Eureka para ver los servicios registrados."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MS Catalogo (8081)",
+			"item": [
+				{
+					"name": "Obtener todos los productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/catalogo/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Producto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Laptop Gamer\",\n    \"descripcion\": \"Laptop de alta gama para diseño y juegos\",\n    \"precio\": 1500.00,\n    \"categoriaId\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/catalogo/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MS Reportes - WebClient (8090)",
+			"item": [
+				{
+					"name": "Obtener Datos Externos (WebClient Test)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reportes/reportes/external-data?service=localhost:8081&endpoint=/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"reportes",
+								"external-data"
+							],
+							"query": [
+								{
+									"key": "service",
+									"value": "localhost:8081"
+								},
+								{
+									"key": "endpoint",
+									"value": "/productos"
+								}
+							]
+						},
+						"description": "Prueba la implementación de WebClient llamando al MS Catálogo desde MS Reportes."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MS Usuarios (8084)",
+			"item": [
+				{
+					"name": "Obtener Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuarios/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MS Stock (8082)",
+			"item": [
+				{
+					"name": "Obtener Inventario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/inventario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"inventario"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost"
+		}
+	]
+}

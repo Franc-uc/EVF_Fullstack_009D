@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Proyecto_Gestion_Logistica/api-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Proyecto_Gestion_Logistica/common-lib/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Proyecto_Gestion_Logistica/eureka-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Proyecto_Gestion_Logistica/ms-auditoria/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Proyecto_Gestion_Logistica/ms-catalogo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Proyecto_Gestion_Logistica/ms-envios/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Proyecto_Gestion_Logistica/ms-notificaciones/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Proyecto_Gestion_Logistica/ms-ordenes/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Proyecto_Gestion_Logistica/ms-pagos/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Proyecto_Gestion_Logistica/ms-proveedores/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Proyecto_Gestion_Logistica/ms-reportes/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Proyecto_Gestion_Logistica/ms-stock/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Proyecto_Gestion_Logistica/ms-usuarios/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Proyecto_Gestion_Logistica/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Proyecto_Gestion_Logistica/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
