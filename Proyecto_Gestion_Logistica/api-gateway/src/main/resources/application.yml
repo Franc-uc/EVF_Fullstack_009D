@@ -16,63 +16,43 @@ spring:
         - id: ms-catalogo
           uri: lb://ms-catalogo
           predicates:
-            - Path=/catalogo/**
-          filters:
-            - StripPrefix=1
+            - Path=/productos/**
         - id: ms-stock
           uri: lb://ms-stock
           predicates:
             - Path=/stock/**
-          filters:
-            - StripPrefix=1
         - id: ms-ordenes
           uri: lb://ms-ordenes
           predicates:
             - Path=/ordenes/**
-          filters:
-            - StripPrefix=1
         - id: ms-usuarios
           uri: lb://ms-usuarios
           predicates:
             - Path=/usuarios/**
-          filters:
-            - StripPrefix=1
         - id: ms-envios
           uri: lb://ms-envios
           predicates:
             - Path=/envios/**
-          filters:
-            - StripPrefix=1
         - id: ms-pagos
           uri: lb://ms-pagos
           predicates:
             - Path=/pagos/**
-          filters:
-            - StripPrefix=1
         - id: ms-notificaciones
           uri: lb://ms-notificaciones
           predicates:
             - Path=/notificaciones/**
-          filters:
-            - StripPrefix=1
         - id: ms-auditoria
           uri: lb://ms-auditoria
           predicates:
             - Path=/auditoria/**
-          filters:
-            - StripPrefix=1
         - id: ms-proveedores
           uri: lb://ms-proveedores
           predicates:
             - Path=/proveedores/**
-          filters:
-            - StripPrefix=1
         - id: ms-reportes
           uri: lb://ms-reportes
           predicates:
             - Path=/reportes/**
-          filters:
-            - StripPrefix=1
         - id: openapi
           uri: http://localhost:8080
           predicates:
